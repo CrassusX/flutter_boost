@@ -54,7 +54,8 @@ class _ImagePickerPageState extends State<ImagePickerPage> {
     }
   }
 
-  void _onImageButtonPressed(ImageSource source, {BuildContext? context}) async {
+  void _onImageButtonPressed(ImageSource source,
+      {BuildContext? context}) async {
     if (_controller != null) {
       await _controller!.setVolume(0.0);
     }
@@ -64,17 +65,17 @@ class _ImagePickerPageState extends State<ImagePickerPage> {
       await _playVideo(file!);
     } else {
       await _displayPickImageDialog(context!,
-              (double? maxWidth, double? maxHeight, int? quality) async {
-            final pickedFile = await _picker.pickImage(
-              source: source,
-              maxWidth: maxWidth,
-              maxHeight: maxHeight,
-              imageQuality: quality,
-            );
-            setState(() {
-              _imageFile = pickedFile;
-            });
-          });
+          (double? maxWidth, double? maxHeight, int? quality) async {
+        final pickedFile = await _picker.pickImage(
+          source: source,
+          maxWidth: maxWidth,
+          maxHeight: maxHeight,
+          imageQuality: quality,
+        );
+        setState(() {
+          _imageFile = pickedFile;
+        });
+      });
     }
   }
 
@@ -182,9 +183,9 @@ class _ImagePickerPageState extends State<ImagePickerPage> {
 
     return Scaffold(
       appBar: AppBar(
-        brightness:Brightness.light,
+        brightness: Brightness.light,
         backgroundColor: Colors.white,
-        textTheme:new TextTheme(title: TextStyle(color: Colors.black)) ,
+        textTheme: new TextTheme(bodyText1: TextStyle(color: Colors.black)),
         leading: Builder(builder: (BuildContext context) {
           return IconButton(
             icon: const Icon(Icons.arrow_back),
@@ -197,7 +198,6 @@ class _ImagePickerPageState extends State<ImagePickerPage> {
           );
         }),
         title: Text(widget.title!),
-
       ),
       body: Center(
         child: !kIsWeb && defaultTargetPlatform == TargetPlatform.android
