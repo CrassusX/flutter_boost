@@ -59,7 +59,7 @@ public class TabCustomViewActivity extends AppCompatActivity implements BottomNa
             container.addView(tabContainer, -1, -1);
         }
 
-        lastId = R.id.navigation_flutter1;
+        lastId = R.id.navigation_native;
         bottomNavigation.setSelectedItemId(lastId);
     }
 

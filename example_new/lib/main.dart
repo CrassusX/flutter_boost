@@ -60,7 +60,7 @@ class _MyAppState extends State<MyApp> {
       return CupertinoPageRoute(
         settings: settings,
         builder: (_) => TabPage(
-          color: Colors.blue,
+          color: Colors.transparent,
           title: 'Tab1',
         ),
       );
